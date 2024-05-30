@@ -1,0 +1,7 @@
+
+  <div class="content flex" *ngIf="userData">
+    <img [src]="userData.avatar_url" alt="User Avatar" style="border-radius: 50%; width: 150px; height: 150px;">
+    <p>{{ userData.name }}</p>
+    <p>{{ userData.bio }}</p>
+    <p>{{ userData.location }}</p>
+  </div>

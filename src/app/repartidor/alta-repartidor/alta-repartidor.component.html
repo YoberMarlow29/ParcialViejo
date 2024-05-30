@@ -1,0 +1,95 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h2>Formulario de Alta de Repartidor</h2>
+      <p class="lead">Complete los datos del repartidor y haga clic en "Agregar" para registrarlo.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Datos del Repartidor</h4>
+        <form [formGroup]="altaForm" (ngSubmit)="btnAgregar()" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="dni" class="form-label">DNI</label>
+              <input formControlName="dni" type="text" class="form-control" id="dni" required>
+
+              @if (errorControl['dni'].errors?.['required']) {
+
+                <span style="color: red;">
+                  dni requerido
+                </span>
+              }
+            </div>
+
+            <div class="col-sm-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input formControlName="nombre" type="text" class="form-control" id="nombre" required>
+              @if (errorControl['nombre'].errors?.['required']) {
+
+                <span style="color: red;">
+                  nombre requerido
+                </span>
+              }
+            </div>
+
+            <div class="col-sm-6">
+              <label for="edad" class="form-label">Edad</label>
+              <input formControlName="edad" type="text" class="form-control" id="edad" required>
+              @if (errorControl['edad'].errors?.['required']) {
+
+                <span style="color: red;">
+                  edad requerido
+                </span>
+              }
+            </div>
+
+            <div class="col-sm-6">
+              <label for="capacidadTransporte" class="form-label">Capacidad de Transporte</label>
+              <input formControlName="capacidadTransporte" type="text" class="form-control" id="capacidadTransporte" required>
+              @if (errorControl['capacidadTransporte'].errors?.['required']) {
+
+                <span style="color: red;">
+                  capacidadTransporte requerido
+                </span>
+              }
+            </div>
+
+            <div class="col-12">
+              <label for="paisOrigen" class="form-label">País de Origen</label>
+              <input formControlName="paisOrigen" type="text" class="form-control" id="paisOrigen" readonly required>
+              <app-lista-paises (countryEv)="onCountrySelect($event)"></app-lista-paises>
+              <div class="invalid-feedback" >
+                @if (errorControl['paisOrigen'].errors?.['required']) {
+
+                  <span style="color: red;">
+                    paisOrigen requerido
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="unidadPropio" class="form-label">Unidad Propia</label>
+              <input formControlName="unidadPropio" type="checkbox" class="form-check-input" id="unidadPropio">
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="altaForm.invalid">Agregar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">© 2021–2024 Nombre de la Empresa</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacidad</a></li>
+      <li class="list-inline-item"><a href="#">Términos</a></li>
+      <li class="list-inline-item"><a href="#">Soporte</a></li>
+    </ul>
+  </footer>
+</div>

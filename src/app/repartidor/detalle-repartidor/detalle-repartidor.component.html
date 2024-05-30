@@ -1,0 +1,33 @@
+<table *ngIf="repartidor" class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2" class="text-center">Detalles del Repartidor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ID:</strong></td>
+      <td>{{ repartidor.dni }}</td>
+    </tr>
+    <tr>
+      <td><strong>Nombre:</strong></td>
+      <td>{{ repartidor.nombre }}</td>
+    </tr>
+    <tr>
+      <td><strong>Edad:</strong></td>
+      <td>{{ repartidor.edad }}</td>
+    </tr>
+    <tr>
+      <td><strong>Capacidad de Transporte:</strong></td>
+      <td>{{ repartidor.capacidadTransporte }}</td>
+    </tr>
+    <tr>
+      <td><strong>Pais de Origen:</strong></td>
+      <td (click)="paisSeleccionado.emit(repartidor.paisOrigen)">{{ repartidor.paisOrigen }}</td>
+    </tr>
+    <tr>
+      <td><strong>Unidad Propia:</strong></td>
+      <td>{{ repartidor.unidadPropio }}</td>
+    </tr>
+  </tbody>
+</table>

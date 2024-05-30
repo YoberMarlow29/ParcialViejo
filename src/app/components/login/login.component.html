@@ -1,0 +1,55 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      <h2>Login</h2>
+      <p class="lead">Ingrese sus credenciales para acceder al sistema.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Datos de Acceso</h4>
+        <form (ngSubmit)="login()" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+              <div class="invalid-feedback">
+                Email es requerido.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+              <div class="invalid-feedback">
+                Password es requerido.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Login</button>
+        </form>
+
+        <hr class="my-4">
+
+        <div class="quick-access">
+          <h3>Acceso Rápido</h3>
+          <button class="btn btn-secondary w-100 my-2" (click)="btnEmpleado()">ACCESO EMPLEADO</button>
+          <button class="btn btn-secondary w-100 my-2" (click)="btnAdmin()">ACCESO ADMIN</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">© 2021–2024 Nombre de la Empresa</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacidad</a></li>
+      <li class="list-inline-item"><a href="#">Términos</a></li>
+      <li class="list-inline-item"><a href="#">Soporte</a></li>
+    </ul>
+  </footer>
+</div>

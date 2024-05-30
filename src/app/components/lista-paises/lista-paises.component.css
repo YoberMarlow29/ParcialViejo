@@ -1,0 +1,12 @@
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Puedes ajustar la altura según sea necesario */
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: .3rem;
+}

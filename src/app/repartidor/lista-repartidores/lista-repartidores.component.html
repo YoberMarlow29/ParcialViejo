@@ -1,0 +1,22 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">dni</th>
+      <th scope="col">nombre</th>
+      <th scope="col">edad</th>
+      <th scope="col">capacidad de transporte</th>
+      <th scope="col">Pais de Origen</th>
+      <th scope="col">Unidad Propia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repartidor of listaRepartidores" (click)="seleccionarRepartidor(repartidor)">
+      <th scope="row">{{ repartidor.dni }}</th>
+      <td>{{ repartidor.nombre }}</td>
+      <td>{{ repartidor.edad}}</td>
+      <td>{{ repartidor.capacidadTransporte }}</td>
+      <td>{{ repartidor.paisOrigen }}</td>
+      <td>{{ repartidor.unidadPropio }}</td>
+    </tr>
+  </tbody>
+</table>
